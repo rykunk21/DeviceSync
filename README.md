@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>PERSONAL REPO USED FOR DEVICE SYNC</h1>
+    <h3>Devic Sync</h3>
   </body>
 </html>
