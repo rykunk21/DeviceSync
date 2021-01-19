@@ -2,14 +2,9 @@
 <html>
   <head>
       <meta charset="UTF-8">
-      <style>
-        body {
-          margin: auto;
-        }
-      </style>
   </head>
   <div class="container">
-    <body>
+    <body style="margin: auto;">
       <h3>Device Sync</h3>
     </body>
   </div>
