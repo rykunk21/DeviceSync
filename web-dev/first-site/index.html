@@ -7,11 +7,12 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
-        <link rel="shortcut icon" href="michigan-state-university-icon.png" />"
+        <link rel="shortcut icon" href="michigan-state-university-icon.png" />
         <style>
             body{
                 font-family: Oxygen;
             }
+
             .container{
                 margin: auto;
                 margin-top: 50px;
@@ -26,9 +27,55 @@
                 padding-right: 50px;
                 border: 1px solid;
             }
+
+        
+            @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+            #clock {
+            font-family: 'Orbitron', sans-serif;
+            color: #66ff99;
+            font-size: 56px;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+}
         </style>
+        <script>
+            function currentTime() {
+            var date = new Date(); /* creating object of Date class */
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            hour = updateTime(hour);
+            min = updateTime(min);
+            document.getElementById("clock").innerText = hour + " : " + min; /* adding time to the div */
+                var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+            }
+
+            function updateTime(k) {
+            if (k < 10) {
+                return "0" + k;
+            }
+            else {
+                return k;
+            }
+            }
+
+            currentTime();
+            function currentTime() {
+            var midday = "AM";
+            midday = (hour >= 12) ? "PM" : "AM";
+            }
+
+            function currentTime() {
+            hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12): hour);
+            }
+
+                
+        </script>
     </head>
     <body>
+        <div id="clock">1</div>
         <div class="container">
             <h1>Class Navigator SS21</h1>
             <h3><a href="https://piazza.com/class/keavk3qytkf5u" target="_blank">Piazza</a> </h3>
@@ -52,6 +99,7 @@
                     <h2><a href="https://openvellum.ecollege.com/course.html?courseId=16536152&OpenVellumHMAC=0429c0258b1e09de3de400a7455a50de#10001" target="_blank">PHY 183 Physics</a></h2>
                     <p><a href="https://d2l.msu.edu/d2l/home/1075427">D2l Page</a></p>
                     <p><a href="https://msu.zoom.us/j/99857350213" target="_blank">Zoom Meeting (pass: 10110111)</a></p>
+                    
                 </div>
         </div>
     </body>
