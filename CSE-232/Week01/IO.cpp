@@ -16,4 +16,4 @@ int main () {
   cin >> age;
   cout << "Hello " << name << ", you are " << age << '!' << endl;
   // return 0;
-}
+} ;
