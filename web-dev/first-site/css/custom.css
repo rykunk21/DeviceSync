@@ -1,0 +1,33 @@
+body{
+    font-family: Oxygen;
+}
+
+h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a{
+    margin-bottom: 20px;
+}
+.container{
+    margin: auto;
+    margin-top: 50px;
+    max-width: 500px;
+    padding: 50px;
+    border: 1px solid;
+}
+
+.class{
+    margin: 1px;
+    padding: auto;
+}
+
+.class-items{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul{
+    list-style-type: circle;
+}
