@@ -1,21 +1,42 @@
 body{
-    background-image: url(img/bgimg1.jpg);
+    background-image: url(img/msu-bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     max-width: 100%;
-    height: 500px;
+    max-height: 100%;
     margin: auto;
     font-family: Oxygen;
 }
 .container {
-    margin-bottom: 0px;
+    margin:10px auto;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    
+}
+
+.headitems li {
+    float: left;
+    width: 25%;
+    display: inline;
 }
 
 .landing {
-    background-image: linear-gradient(#ffffff, #e4e4e4);
+    padding: 10px;
+    background-image: linear-gradient(#fff, #e4e4e4);
     position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+.classes{
+    position: relative;
+    margin:auto;
+    padding: 10px;
+    border: 2px solid black;
     width: 100%;
-    height: 350px;
+
 }
 
 h1 {
@@ -24,3 +45,18 @@ h1 {
     margin-bottom: auto;
     text-align: center;
 }
+.class {
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 300px;
+    border: 2px solid;
+
+}
+
+.class img {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+  }

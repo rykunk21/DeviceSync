@@ -63,8 +63,10 @@ h1 {
 
   .services-container {
     background-image: linear-gradient(#ffffff, #e4e4e4);
-    height: 500px;
-    margin: auto;
+    float: right;
+    height: 600px;
+    width: 60%;
+    margin: 50px;
   }
 
   .service-heading{
