@@ -7,10 +7,11 @@ int main(){
     int num2;
     cin >> num1 >> num2;
     int count = 1;
-    
+    bool ended = false;
+
     for(int i=1; i <= num1; i++){
-      
-        while(count < i) {
+
+        while(count <= i) {
             cout << count << ' ';
             count++;
             }
@@ -23,5 +24,11 @@ int main(){
             
         cout << endl;
         count = 1;
+
+        if (i == num2)
+            break;
     }
+
+    for (int i=1; i<=num2; i++)
+        cout << i << ' '<< endl;
 }
