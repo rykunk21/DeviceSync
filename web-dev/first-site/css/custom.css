@@ -50,7 +50,7 @@ h1 {
 }
 .class {
     border: 1px solid black;
-    border-radius: 25px;
+    border-radius: 10px;
     position: relative;
     text-align: center;
     float: right;
