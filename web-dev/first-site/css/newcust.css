@@ -74,12 +74,13 @@ html, body {
 .class h3 {
     margin: 0;
     position:relative;
-    color: rgb(202, 202, 202);
+    color: rgb(97, 97, 97);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     text-align: center;
-    vertical-align: text-bottom;
-    height: 50%;
+    vertical-align: bottom;
+    padding-top: 55px;
+    height: 30%;
     background-image: linear-gradient(rgba(78, 78, 78, 0), rgb(70, 70, 70));
 
 }

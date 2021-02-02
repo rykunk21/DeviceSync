@@ -32,3 +32,26 @@ int main(){
     for (int i=1; i<=num2; i++)
         cout << i << ' '<< endl;
 }
+
+// q2 correct
+#include <iostream>
+
+int main() {
+  int number_of_lines{0};
+  int max_value{0};
+  std::cin >> number_of_lines >> max_value;
+  for(int line{0}; line < number_of_lines; ++line) {
+    
+    int i{1};
+    for ( ; i < line + 1; ++i){
+      std::cout << i << ' ';
+    }
+    if (i > max_value) {
+      break;
+    }
+    for (; i > 0; --i) {
+      std::cout << i << ' ';
+    }
+    std::cout << std::endl;
+  }
+}
