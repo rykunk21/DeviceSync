@@ -1,0 +1,48 @@
+
+
+function fn(x)
+    return (-6*(x**2))+(5*x)+3
+
+function integral(x)
+    return (-2*(x**2))+(5/2)*(x**2)+(3*x)
+
+funciton trapezoid (lower_bound, upper_bound, count)
+    delta_x = upper_bound - lower_bound / count
+
+    return (do calculuation)
+
+
+
+function tolerance_check(integral, trapezoid, tolerance)
+    return (abs(integral-trapezoid) < tolerance)
+
+
+main()
+    std cin
+        lower_bound a
+        upper_bound b
+        float tolerance
+        number of traps n
+
+
+    std cout
+        Lower Range: a
+        Upper Range: b
+        Tolerance: tolerance
+        Initial trapezoid count: n
+        
+    integralcalc = integral(b) - integral(a)
+    trapezoidcalc = trapezoid(a,b,n)
+
+    while not tolerance_check(integralcalc, trapezoidcalc, tolerance)
+
+        intermediate result: area traps *diff*
+
+        n*=2
+        trapezoidcalc = trapezoidcalc = trapezoid(a,b,n)
+        if tolerance_check(args)
+            break
+        else
+            continue
+
+    cout << ( a,b,tolerance,trapEst,integral )
