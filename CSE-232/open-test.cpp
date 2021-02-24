@@ -1,5 +1,6 @@
 #include <iostream>
 
 int main(){
-    std::cout << (012 +0.45);
+    char player1 = 'c';
+    std::cout << player1;
 }
