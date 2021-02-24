@@ -1,0 +1,54 @@
+
+int age = 28;
+
+double price = 8.99;
+
+char grade = 'A';
+
+std::string message = "Game Over";
+
+bool late_to_work = true;
+
+
+As the name implies, datatype modifiers are used with built-in data 
+types to modify the length of data that a particular data type can hold.
+Data type modifiers in C++ are:
+
+    - signed
+    - unsigned
+    - short
+    - long
+
+Note: Going from a double to an int simply removes the decimal. There’s no rounding involved.
+
+
+
+
+ImprovedContains takes three arguments: a string representing the text to search, 
+a string representing the pattern to search for, and a pointer to bool that 
+represents if the search should be case insensitive. 
+This function should return true if the pattern is found 
+in the text, false otherwise.
+
+ImprovedMatches takes three arguments: a string representing the
+text to search, a string representing the pattern to search for, 
+and a pointer to bool that represents if the search should be 
+case insensitive. This function should return the number of times 
+the pattern is found in the text.
+
+ImprovedFindFirstOf takes three arguments: a string representing 
+the text to search, a string representing the pattern to search for, 
+and a pointer to bool that represents if the search should be case 
+insensitive. This function should return the index in the text that the 
+pattern is found, return -1 if pattern is not found.
+
+ImprovedReplace takes four arguments: a string representing the text 
+to search, a string representing the pattern to search for, a string 
+representing the new content to replace the pattern in the text with, and 
+a pointer to bool that represents if the search should be case insensitive.
+
+ImprovedNumberOfDifferences takes three arguments: two strings that will 
+be compared character by character, and a bool that represents if the 
+comparison should be case insensitive. This function should return the 
+number of characters that differ between the two strings. You can assume 
+that neither string contains special characters.
