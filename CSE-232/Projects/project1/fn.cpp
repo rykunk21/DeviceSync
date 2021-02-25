@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <typeinfo>
 using std::string; using std::cout;
 #include "head.h"
 
@@ -19,25 +20,38 @@ string ToLower(string s){
 
 int specFind(string search, string pattern, int start){
     string digit = "0123456789";
+    int search_length = search.length();
+    int pattern_length = pattern.length();
 
-
-    for(string::size_type i=start; i<search.length(); i++){
-        for(string::size_type j=0; j<pattern.length();){
+    for(int i=start; i <= search_length; i++){
+        for(int j=0; j <= pattern_length;){
             if (pattern[j]==search[i+j]){
                 j++;
+                if (j == pattern_length - 1){
+                    return i;
+                } else {
+                    continue;
+                }
             }
             if ((pattern[j]=='%') && 
-                (digit.find(search[i+j] == string::npos))){
-                    j++;
+                (digit.find(search[i+j]) == string::npos)){
+                j++;
+                if (j == pattern_length - 1){
+                    return i;
+                } else {
+                    continue;
                 }
-            if ((pattern[j]=='#') &&
-                (digit.find(search[i+j] != string::npos))){
-                    j++;
-                }
-
-            if (j == (pattern.length()-1)){
-                return i;
             }
+            if ((pattern[j]=='#') &&
+                (digit.find(search[i+j]) != string::npos)){
+                    j++;
+                    if (j == pattern_length - 1){
+                    return i;
+                } else {
+                    continue;
+                }
+            }
+            break;
         }
     }
     return -1;
@@ -69,8 +83,8 @@ int ImprovedMatches(string search, string pattern, bool *case_sens){
 
     // todo count all occurances
     do{
-        index = (specFind(search, pattern) + 1);
-        if (index){
+        index = (specFind(search, pattern, index) + 1);
+        if (index >= 0){
             count += 1;
         }
     }
@@ -81,19 +95,10 @@ int ImprovedMatches(string search, string pattern, bool *case_sens){
 
 int ImprovedFindFirstOf(string search, string pattern, bool *case_sens){
     // return the index in the text that the pattern is found
-    // return -1 if pattern is not found.
     if (case_sens){
         search = ToLower(search);
     }
-    int index = search.find(pattern);
-
-    if (index != string::npos){
-        return index;
-    } else {
-        return -1;
-    }
- 
-    return 0;
+    return specFind(search, pattern);
 }
 
 void ImprovedReplace(string &search, string pattern, string replace, 
@@ -103,13 +108,14 @@ void ImprovedReplace(string &search, string pattern, string replace,
     if (case_sens){ // make a copy of lowercase entries
         std::string lower_search = ToLower(search);
         std::string lower_pattern = ToLower(pattern);
-        index = lower_search.find(lower_pattern);
+        index = specFind(lower_search, lower_pattern);
     } else {  
-        index = search.find(pattern);
+        index = specFind(search, pattern);
     }
 
-    if (index != string::npos){
-        search.replace(index, pattern.length(), replace);  // replace exactly what the user inputs
+    if (index >= 0){
+        // replace exactly what the user inputs
+        search.replace(index, pattern.length(), replace);  
     }
 }
 
@@ -120,7 +126,7 @@ int ImprovedNumberOfDifferences(string s1, string s2, bool *case_sens){
         s2 = ToLower(s2);
     }
     int diffs = 0;
-    for (int i=0; i < s1.length(); i++){
+    for (string::size_type i=0; i < s1.length(); i++){
         if (s1[i] != s2[i]){
             diffs +=1;
         }
@@ -150,12 +156,14 @@ void test_ImprovedMatches(){
 
 void test_ImprovedFindFirstOf(){
     bool sens = false;
-    cout << "expected: 3\n" << "Returned: ";
-    cout << ImprovedFindFirstOf("lllstring", "st", &sens);
+    cout << "expected: 1\n" << "Returned: ";
+    string search = "suss";
+    string pattern = "uss";
+    cout << ImprovedFindFirstOf("suss", pattern, &sens) << std::endl;
 }
 
 void test_ImprovedReplace(){
-    bool sens = true;
+    bool sens = false;
     cout << "expected: success\n"<< "Returned: ";
     string s = "suss";
     ImprovedReplace(s, "uss", "uccess", &sens);
@@ -165,6 +173,7 @@ void test_ImprovedReplace(){
 void test_ImprovedNumberOfDifferences(){
     bool case_sens = false;
     int result = ImprovedNumberOfDifferences("", "", &case_sens);
+    cout << result;
 
 }
 

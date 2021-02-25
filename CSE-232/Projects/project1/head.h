@@ -8,7 +8,7 @@ bool ImprovedContains(string, string, bool *case_sens);
 
 int ImprovedMatches(string, string, bool *case_sens);
 
-int ImprovedFindFirstOf(string, string, bool *case_sens);
+int ImprovedFindFirstOf(string, string patern, bool *case_sens);
 
 void ImprovedReplace(string &s, string, string, bool *case_sens);
 
